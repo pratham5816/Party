@@ -1,0 +1,16 @@
+Module 0 - Getting Started with Moqui
+
+The git setup is done with ssh key on the linux machine. Using IntelliJ IDE.
+The Initial Setup Of Moqui is done.
+The app is functional on my local machine on port 8080.
+The moqui uses war file better for deployment.
+It is container independent framework.
+It is very different from mcv. Here thier is no controller.
+It supports Rest APIs.
+The framework is customizable according to our needs.
+It supports Gradle and Ant build tool. Im using gradle.
+Learned About the Moqui framework. XML , Groovy , Moqui Servlet , Jetty Server , its just 20% of the apache ofbiz (very light weight compare to apache ofbiz).
+The App is different from Ofbiz. In Ofbiz the OMS + ERP is already present but here in Moqui we have to setup Mantle Bussiness Artifacts to get
+Basic Data Models , Bussiness logic , service , screen , entities.
+Learned About the Execution Context which helps to get any resource in the application. (EC - entity | ec.entity.find())
+The base of moqui is java only and internal implementation has jetty servlet (Advance java) and moqui servlet.

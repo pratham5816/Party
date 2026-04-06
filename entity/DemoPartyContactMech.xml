@@ -1,0 +1,22 @@
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
+
+    <entity entity-name="DemoPartyContactMech" package-name="demo">
+        <field name="partyId" type="id"/>
+        <field name="contactMechId" type="id"/>
+        <field name="fromDate" type="date-time"/>
+        <field name="thruDate" type="date-time"/>
+
+<!--        primary key of partyId +  contactMechId  + fromDate -->
+
+        <primary-key field="partyId"/>
+        <primary-key field="contactMechId"/>
+        <primary-key field="fromDate"/>
+
+        <relation-ship type="one" title="Party">
+
+        </relation-ship>
+
+    </entity>
+
+</entities>

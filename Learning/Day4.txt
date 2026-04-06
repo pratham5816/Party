@@ -1,0 +1,43 @@
+06/04/26
+
+Fixed the Enum seed values of DemoContactMech. got to know that relationship
+with seed data file was missing.
+Checked in mysql if its working or not.
+enum values were EMAIL / TELECOM_NUMBER / POSTAL_ADDRESS
+i inserted values from enum it worked but as i changed it to something which is not in present in enums
+it failed to insert the record.
+
+mysql> insert into demo_contact_mech values("c2" , "WRN" , "HELLO" , now() , now() );
+ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`moqui`.`demo_contact_mech`, CONSTRAINT `demo_contact_mech_ibfk_1` FOREIGN KEY (`CONTACT_MECH_TYPE_ID`) REFERENCES `enumeration` (`ENUM_ID`))
+mysql> insert into demo_contact_mech values("c2" , "EMAIL" , "HELLO" , now() , now() );
+Query OK, 1 row affected (0.01 sec)
+
+
+same with entity party
+
+mysql> insert into demo_party values("c2" , now() , "WRN" , now());
+ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`moqui`.`demo_party`, CONSTRAINT `demo_party_ibfk_1` FOREIGN KEY (`PARTY_TYPE_ID_ENUM`) REFERENCES `enumeration` (`ENUM_ID`))
+mysql> insert into demo_party values("c2" , now() , "PERSON" , now());
+Query OK, 1 row affected (0.01 sec)
+
+
+
+
+-------------------------------------------------------------------------------
+
+
+<relationship> tag.
+
+type= one / many  relationship
+title = name used in code
+related = targeted entity
+key-map = column mapping
+entity-condition = filter on related entity.
+
+
+-------------------------------------------------------------------------------
+
+In mac i used to switch jdk using sdkman.
+But i got to know that in linux there a concept of update-alternatives.
+using this we can switch jdk in linux.
+currently using jdk 21 for moqui.

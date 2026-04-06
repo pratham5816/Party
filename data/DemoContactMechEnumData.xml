@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<seed-data>
+    <moqui.basic.Enumeration
+            enumId="EMAIL"
+        enumTypeId="ContactMechType"
+    />
+    <moqui.basic.Enumeration
+        enumId="TELECOM_NUMBER"
+        enumTypeId="ContactMechType"
+    />
+    <moqui.basic.Enumeration
+        enumId="POSTAL_ADDRESS"
+        enumTypeId="ContactMechType"
+    />
+</seed-data>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="demoparty" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/component-definition-3.xsd">
+
+    <entity-facade>
+        <entity-location type="entity" location="entity"/>
+    </entity-facade>
+
+</component>

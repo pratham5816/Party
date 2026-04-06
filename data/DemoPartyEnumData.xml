@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<seed-data>
+    <moqui.basic.Enumeration
+            enumId="PERSON"
+            enumTypeId="PartyType"
+    />
+    <moqui.basic.Enumeration
+            enumId="PARTY_GROUP"
+            enumTypeId="PartyType"
+    />
+
+</seed-data>

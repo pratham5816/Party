@@ -1,0 +1,61 @@
+Module 0
+
+OFbiz does not support war based deployment. means we can't package it into jar or war.
+Where as Moqui is DevOps friendly. and it cope up with current market needs.
+Moqui uses Winstone(Light weight container Java servlet container) - internally uses jetty
+---------------------------------------------------------------
+Today , i researched about the Execution Context and Facades.
+Completed the 1st lecture of Moqui Framework from HotWax in youtube.
+
+Execution Context is used when we want to request something.
+EC is initialized when a job or request occur.
+After the response is completed the EC is destroyed.
+it can be db access , service access or screen transtions.
+Web Facade is used when we have to deal with https request(can be Rest APIS).
+
+-----------------------------------------------------------------
+
+Created a new tutorial component following Moqui docs.
+Created a proper component structure. [data , entity , screen , script , service]
+Added a MoquiConfig.xml.
+Added a screen xml file.
+Getting errors as of now which is to resolved.
+
+
+------------------------------------------------------------------
+
+Researched about the Elastic Search
+It is a high performance search engine.
+It is faster than db query.
+Search huge amount of data quickly.
+it do full text search.
+
+
+------------------------------------------------------------------
+
+Mysql Setup with Moqui
+
+Downloaded the jdbc driver and used sudo apt install []  to install in machine
+Configured the tutorial folder in right place.
+Configured the MoquiDevConfig.xml with the sql host , port , password.
+got the jar file of jdbc driver in log package.
+Demo Seed data and tables / schemas are migrated to local machine db.
+
+--------------------------------------------------------------------
+
+Explored the Mantle-Universal Data Model and Mantle Universal Service layer
+
+Added that into the repo.
+migrated the udm schema to local machine db.
+
+Next target is building entities.
+
+
+----------------------------------------------------------
+Got to know that each component can be seperate application.
+But moqui framework and other created / modified / custom components club together to run. without base moqui framework it will not work.
+
+----------------------------------------------------------
+Created a custom party component.
+added component.xml .
+Created party entity.

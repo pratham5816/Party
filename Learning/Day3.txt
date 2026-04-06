@@ -1,0 +1,18 @@
+04/04/26
+
+Learned about the gradle commands. (I have worked with maven in my cdac projects).
+gradle is a build / automation tool like maven but covers more than maven.
+maven is stick to spring/springboot only. where as gradle can work with scala , c++ , swift , moqui and more. its coverage is vast.
+
+gradlew cleanAll - clears all the complied classes and delete all the build files.
+gradlew load - reads and load all the entities in db.
+gradlew run - runs the server on jetty.
+
+by default db is configured and connected to db moqui (we have to create db name moqui manually)
+
+Got to know that we cant have empty xml file in entity package it will crash our application and without
+any primary key allocation it will crash too.
+Got to know that in entities moqui uses relationship for orm logic(example what happened with me - giving fk is not reflecting in local db thats how it works)
+turns out that it is more flexible and enhance performance. relationship tag and its relation is for framework level only.
+
+having doubts in seeding . how it works.
