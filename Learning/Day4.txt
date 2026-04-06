@@ -60,3 +60,21 @@ mysql> select * from demo_party;
 | 101      | 2026-04-06 05:30:00.000 | PERSON             | 2026-04-06 10:03:09.525 |
 +----------+-------------------------+--------------------+-------------------------+
 1 row in set (0.00 sec)
+
+-------------------------------------------------------------------------------
+
+tried the sql runner in moqui ui. got to know that it is a ui based sql terminal only.
+makes fetching easy and simple using moqui ui only.
+
+-------------------------------------------------------------------------------
+
+Started with screen in tutorial component.
+Added MoquiConf.xml.
+Added tutorial.xml with basic hello world widget tag.
+In MoquiConf we are adding our tutorial.xml to root screen thats why we are able to the tutorial in landing page only.
+Root screen is coming from the webroot component its already defined and having header / footer and etc. we are just extending it for now.
+require-authentication="anonymous-all" we are purposefully disabled the security
+
+-------------------------------------------------------------------------------
+Added tutorial component inside party component just to track it in github knowing that it is not appropriate.
+application is working fine.
