@@ -41,3 +41,22 @@ In mac i used to switch jdk using sdkman.
 But i got to know that in linux there a concept of update-alternatives.
 using this we can switch jdk in linux.
 currently using jdk 21 for moqui.
+
+Stucked in a blocker while creating  DemoPartyContactMech. skipping for now.
+
+
+------------------------------------------------------------------------------
+
+getting errors from DemoPartyContactMech.xml skipped the errors as of now.
+
+Tried to insert data from moqui ui. using localhost server.
+
+its working properly
+
+mysql> select * from demo_party;
++----------+-------------------------+--------------------+-------------------------+
+| PARTY_ID | CREATED_DATE            | PARTY_TYPE_ID_ENUM | LAST_UPDATED_STAMP      |
++----------+-------------------------+--------------------+-------------------------+
+| 101      | 2026-04-06 05:30:00.000 | PERSON             | 2026-04-06 10:03:09.525 |
++----------+-------------------------+--------------------+-------------------------+
+1 row in set (0.00 sec)

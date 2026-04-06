@@ -13,9 +13,14 @@
         <primary-key field="contactMechId"/>
         <primary-key field="fromDate"/>
 
-        <relation-ship type="one" title="Party">
+<!-- DemoPartyContactMech.partyId  →  Party.partyId  -->
+        <relationship type="one" related="demo.DemoParty" title="Party">
+            <key-map field-name="partyId"/>
+        </relationship>
 
-        </relation-ship>
+        <relationship type="one" related="demo.DemoContactMech" title="Contact">
+            <key-map field-name="contactMechId"/>
+        </relationship>
 
     </entity>
 

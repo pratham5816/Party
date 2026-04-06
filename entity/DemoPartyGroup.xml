@@ -4,8 +4,8 @@
             <field name="partyId" type="id" is-pk="true"/>
             <field name="groupName" type="text-medium"/>
             <field name="description" type="text-medium"/>
-            <relationship type="one" related-entity-name="DemoParty">
-                <key-map field-name="partyId" related="partyId"/>
+            <relationship type="one" related="demo.DemoParty">
+                <key-map field-name="partyId" related-field-name="partyId"/>
             </relationship>
         </entity>
 </entities>

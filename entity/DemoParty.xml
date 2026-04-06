@@ -6,9 +6,9 @@
    <field name="partyTypeIdEnum" type="id"/>   <!-- enum field  -->
 
     <relationship type="one" title="PartyType" related="moqui.basic.Enumeration">
-        <key-map field-name="partyTypeIdEnum" realted="enumId"/>
+        <key-map field-name="partyTypeIdEnum" related-field-name="enumId"/>
         <entity-condition>
-            <econdtion field-name="enumTypeId" value="PartyType"/>
+            <econdition field-name="enumTypeId" value="PartyType"/>
         </entity-condition>
     </relationship>
 </entity>

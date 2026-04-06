@@ -1,16 +1,16 @@
 <entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
-        <entity entity-name="DemoContactMech" package="demo">
+        <entity entity-name="DemoContactMech" package-name="demo">
                 <field name="contactMechId" type="id" is-pk="true" />
         <!--  enums is to be added in contact mechtypeid               -->
                 <field name="contactMechTypeId" type="id"/>
                 <field name="infoString" type="text-medium"/>
-                <field name="createdDate" type="date-time"/>
+                <field name="createdDate" type="date-time" default="now"/>
 
                 <relationship type="one" title="ContactMechType" related="moqui.basic.Enumeration">
-                        <key-map field-name="contactMechTypeId" related="enumId"/>
+                        <key-map field-name="contactMechTypeId" related-field-name="enumId"/>
                         <entity-condition>
-                                <econdition field-name="enumTypeId" value="ContactMechType"/>
+                                <econdition field-name="enumTypeId" value="contactMechType"/>
                         </entity-condition>
                 </relationship>
         </entity>
