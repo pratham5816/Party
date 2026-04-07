@@ -1,0 +1,17 @@
+07/04/26
+
+
+getting parsing xml error.
+Not sure but rendering was causing a blocker but got to know changing 2.1.xsd to 3.xsd worked on my machine.
+
+<component name="party" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/component-definition-3.xsd">
+
+getting problems in rendering child screen as of skipping it.
+
+standalone tag can be added to a screen and set to true if we dont want any parent screen (ex - header / footer in some case).
+transition tag to switch between diffrent screens(ex- click on enter button it will redirect).
+transition is used to handle actions,
+action tag is used for dynamic fetching. (get data from db , procces it , call api/services)
+widgets is a kind of ui layer.
+every tag is having macro-templated defined internally.

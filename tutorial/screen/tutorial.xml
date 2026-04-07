@@ -1,11 +1,31 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd"
-        require-authentication="anonymous-all">
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-3.xsd"
+        require-authentication="false" allow-web-request="anonymous-all">
+
+    <subscreens default-item="Hello">
+        <subscreens-item
+                name="Hello"
+                location="component://tutorial/screen/tutorial/Hello.xml"
+                menu-title="Hello"/>
+
+        <subscreens-item
+                name="Bye"
+                location="component://tutorial/screen/tutorial/Bye.xml"
+                menu-title="Bye"/>
+    </subscreens>
+<!--    FIX ME SUB-SCREENS | ERROR - Screen not found at /apps/tutorial/Hello -->
+
     <widgets>
-        <label type="h1" text="Hello world!"/>
-        <render-mode>
-            <text type="html,veut" location="component://tutorial/screen/tutorial/hello.html"></text>
-        </render-mode>
+        <label type="h1" text="Main Tutorial Screen"/>
+
+<!--        <render-mode>-->
+<!--            <text type="html,vue"-->
+<!--                  location="component://tutorial/screen/tutorial/hello.html"/>-->
+<!--        </render-mode>-->
+
+        <subscreens-active/>
+
+        <label text="^^ ABOVE SUB SCREEN NOT WORKING  ^^"/>
     </widgets>
+
 </screen>

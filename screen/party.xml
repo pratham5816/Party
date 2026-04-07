@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-3.xsd"
+        require-authentication="anonymous-all" allow-web-request="anonymous-all">
+
+
+    <subscreens default-item="PartyList">
+        <subscreens-item name="PartyList" menu-title="Party List" location="component://party/screen/party/PartyList.xml"/>
+        <subscreens-item
+                name="SubScreen"
+                location="component://party/screen/party/SubScreen.xml"/>
+<!--        Sub Screen not rendering FIX ME                   -->
+    </subscreens>
+
+    <widgets>
+        <label type="h1" text="Hello world!"/>
+        <render-mode>
+            <text type="html,vuet" location="component://party/screen/party/Demo.html"/>
+        </render-mode>
+        <subscreens-active/>
+    </widgets>
+</screen>

@@ -5,7 +5,7 @@
     <section>
         <widgets>
             <container>
-                <label type="h1" text="Hello world!"/>
+                <label type="h1" text="Hello world! 2 from partylist.xml"/>
             </container>
         </widgets>
     </section>
