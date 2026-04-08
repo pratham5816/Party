@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-3.xsd"
+        require-authentication="anonymous-all">
+
+    <actions>
+        <entity-find entity-name="demo.DemoParty"  list="partyList">
+            <search-form-inputs/>
+        </entity-find>
+    </actions>
+
+    <widgets>
+        <label text="PartyScreen Displaying all the DemoParty Entities Present in MySql DB"></label>
+
+        <form-list name="ListDemoParty" list="partyList">
+            <auto-fields-entity entity-name="demo.DemoParty" field-type="find-display"/>
+        </form-list>
+    </widgets>
+
+</screen>

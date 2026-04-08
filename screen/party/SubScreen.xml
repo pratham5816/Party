@@ -2,10 +2,9 @@
         xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-3.xsd"
         require-authentication="false" allow-web-request="anonymous-all">
 
-    <section>
+
         <widgets>
             <label text="This is Sub-Screen"/>
         </widgets>
-    </section>
 
 </screen>

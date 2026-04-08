@@ -5,18 +5,24 @@
 
 
     <subscreens default-item="PartyList">
-        <subscreens-item name="PartyList" menu-title="Party List" location="component://party/screen/party/PartyList.xml"/>
-        <subscreens-item
-                name="SubScreen"
-                location="component://party/screen/party/SubScreen.xml"/>
-<!--        Sub Screen not rendering FIX ME                   -->
+        <subscreens-item name="SubScreen" menu-title="SubScreen" menu-index="120"
+                         location="component://party/screen/party/SubScreen.xml"/>
     </subscreens>
-
     <widgets>
-        <label type="h1" text="Hello world!"/>
-        <render-mode>
-            <text type="html,vuet" location="component://party/screen/party/Demo.html"/>
-        </render-mode>
-        <subscreens-active/>
+        <subscreens-active></subscreens-active>
     </widgets>
+<!--        <subscreensreens-item name="PartyList" menu-title="Party List" location="component://party/screen/party/PartyList.xml"/>-->
+<!--        <subscreens-item-->
+<!--                name="SubScreen"-->
+<!--                location="component://party/screen/party/SubScreen.xml"/>-->
+<!--&lt;!&ndash;        Sub Screen not rendering FIX ME                   &ndash;&gt;-->
+<!--    </subscreens>-->
+
+<!--    <widgetsts>-->
+<!--        <label type="h1" text="Hello world!"/>-->
+<!--        <render-mode>-->
+<!--            <text type="html,vuet" location="component://party/screen/party/Demo.html"/>-->
+<!--        </render-mode>-->
+<!--        <subscreens-active/>-->
+<!--    </widgetsts>-->
 </screen>

@@ -2,12 +2,7 @@
 <screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-3.xsd"
         require-authentication="anonymous-all">
-    <section>
         <widgets>
-            <container>
-                <label type="h1" text="Hello world! 2 from partylist.xml"/>
-            </container>
+            <label text="Hello World From PartyList.xml"></label>
         </widgets>
-    </section>
-
 </screen>
