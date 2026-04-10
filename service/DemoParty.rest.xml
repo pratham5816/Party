@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/rest-api-3.xsd"
+          name="demo"
+          require-authentication="anonymous-all">
+
+    <resource name="party">
+        <resource name="create">
+            <method type="post">
+                <service name="create#DemoParty"/>
+            </method>
+        </resource>
+    </resource>
+
+</resource>

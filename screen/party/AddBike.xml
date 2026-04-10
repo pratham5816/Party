@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-3.xsd" require-authentication="anonymous-all">
+<!--    <transitions>-->
+<!--        <transition name="testBikeLogic">-->
+            <actions>
+                <script>
+                    ec.logger.info("Running Test Logic")
+                    def mybike = ec.entity.find("automobile.Bike").list()
+                    ec.logger.info("data" + mybike)
+                </script>
+            </actions>
+<!--        </transition>-->
+<!--    </transitions>-->
+    <widgets>
+        <label text="hey world"/>
+        <container>
+            <link url="testBikeLogic" text="Click to Run Logic and Print Logs"/>
+        </container>
+    </widgets>
+
+</screen>

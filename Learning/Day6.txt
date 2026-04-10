@@ -1,0 +1,32 @@
+08/04/26
+
+The Subscreen issue is resolved now. got to know there was an issue where widgets tag was enclosed in section tag.
+and there was an incorrect path issue.
+
+The PartyScreen is working we can see the data from local mysql rendering on the partyscreen page.
+
+Created a simple enter name and submit from noticed that it was not visible on ui. but entered the path.
+got to know that it was rendering but it was not functional then it clicked me that auth is not set to false and that
+might be the issue and i was correct. require-authentication="false"
+Later i have discovered that there was some mistake in my transition tag and it was causing the form not functional.
+
+----------------------------------------------------------------------------------------------
+
+Done with the dialog box in the partyscreen. Accepting user data from ui and creating a party entity in db.
+It is reflecting in ui after creating.
+Created the service for creating the user (party)
+
+----------------------------------------------------------------------------------------------
+
+Implemented Rest api and service of demo_person entity.
+got to know that i mixed up with the already present tables of usl / udm with my custom tables.
+rather than fixing it i will try it with different entity.
+plus i was getting PK / FK errors in responce from rest (400 , 403).
+The api was working but due to data model implementation fault i need to skip  rather than making the data model again
+from scratch in entity package.
+
+The REST API for creating of party entity is done using postman.
+Used basic auth and post request with a body of attributes present in the table made a service file DemoParty.rest.xml to handle
+the logic.
+
+

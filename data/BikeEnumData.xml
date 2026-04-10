@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <moqui.basic.EnumerationType
+            enumTypeId="CylinderType"
+            description="Bike Cylinder Capacity"/>
+
+    <moqui.basic.Enumeration
+            enumId="125cc"
+            enumTypeId="CylinderType"
+            description="125cc"/>
+
+    <moqui.basic.Enumeration
+            enumId="200cc"
+            enumTypeId="CylinderType"
+            description="200cc"/>
+
+    <moqui.basic.Enumeration
+            enumId="350cc"
+            enumTypeId="CylinderType"
+            description="350cc"/>
+
+</entity-facade-xml>
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<seed-data>-->
+<!--    <moqui.basic.Enumeration-->
+<!--        enumId="125cc"-->
+<!--        enumTypeId="CylinderType"-->
+<!--    />-->
+<!--    <moqui.basic.Enumeration-->
+<!--            enumId="200cc"-->
+<!--            enumTypeId="CylinderType"-->
+<!--    />-->
+<!--    <moqui.basic.Enumeration-->
+<!--            enumId="350cc"-->
+<!--            enumTypeId="CylinderType"-->
+<!--    />-->
+<!--    <moqui.basic.Enumeration-->
+<!--            enumId="650cc"-->
+<!--            enumTypeId="CylinderType"-->
+<!--    />-->
+<!--    <moqui.basic.Enumeration-->
+<!--            enumId="900cc"-->
+<!--            enumTypeId="CylinderType"-->
+<!--    />-->
+<!--    <moqui.basic.Enumeration-->
+<!--            enumId="1000cc"-->
+<!--            enumTypeId="CylinderType"-->
+<!--    />-->
+<!--</seed-data>-->

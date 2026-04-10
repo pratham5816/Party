@@ -1,0 +1,60 @@
+10/04/26
+
+Created a new Bike Entity to revise how things work. trying to implement + more depth (how things connect)
+how the url for rest is build.
+learn about the grep cmd - global regular expression print - its a tool which will help in searching perticular regrex in a file using cmd.
+
+http://localhost:8080/rest/s1/automobile/bikes new create / post worked.
+
+how this path is build?
+
+[/rest] is hardcoded for rest services in moqui
+
+http://[host]:[port]/rest/[API_master]/[Mount_point]/[ResourcePath]
+
+Mount_point = <resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/rest-api-3.xsd"
+                        name={"automobile"} version="1.0" require-authentication="anonymous-all">
+                        here in this case name="automobile
+
+
+ResourcePath =   <resource name="bikes">
+                       <method type="post">
+                           <service name="AutomobileService.create#Bike"/>
+                       </method>
+                   </resource> here in this case "bikes"
+
+
+---------------------------------------------------------------------------------------------------
+
+Got to know about the enityvalue. it represent a single record from a database. its a map-like object that holds data of
+specific entity instance.
+Internally its a Java code. entityvalue is interface extends multiple interfaces cloneable , MAP , Comparable.
+
+EntityFacade - The main abstract thing in moqui which helps to eleminate most of the db query part of the framework.
+Its an Interface.
+
+ExecutionContext - Its the main object available everyWhere. its a kind of central gateway to all framework features.
+ExecutionContextImpl is java class which implements entity facade
+
+
+---------------------------------------------------------------------------------------------------
+
+We have two ways to have groovy in moqui.
+1. Inline way - we can use script tag to write groovy through which we can acces ec methods.
+2. External way - we can make seperate groovy files and then use it.
+
+REST verbs -
+create - create a resource
+update - update a resource
+delete - delete a resource
+store  - (smart logic) insert OR update
+get    - fetch a resource
+
+Noun
+when we use entity-type="auto" noun must be entity name.
+noun is used to know that
+<in-parameters>  - request body.
+<out-parameters> - response body.
+<if> <else>      - tags also exists.
+<resources>      - parent tag for

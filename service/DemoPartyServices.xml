@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-3.xsd">
+
+    <service verb="create" noun="DemoParty" allow-remote="true">
+
+        <in-parameters>
+            <parameter name="partyId" required="true"/>
+            <parameter name="partyTypeIdEnum" required="true"/>
+        </in-parameters>
+
+        <out-parameters>
+            <parameter name="responseMessage"/>
+        </out-parameters>
+
+        <actions>
+            <entity-create entity-name="demo.DemoParty">
+                <field-map field-name="partyId" from="partyId"/>
+                <field-map field-name="partyTypeIdEnum" from="partyTypeIdEnum"/>
+                <field-map field-name="createdDate" from="ec.user.nowTimestamp"/>
+            </entity-create>
+
+            <set field="responseMessage"
+                 value="DemoParty ${partyId} created successfully!"/>
+        </actions>
+
+    </service>
+
+</services>

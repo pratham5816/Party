@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-3.xsd">
+
+    <service verb="create" noun="Person" allow-remote="true">
+        <in-parameters>
+            <parameter name="partyId" required="true"/>
+            <parameter name="firstName" required="true"/>
+            <parameter name="lastName" required="true"/>
+            <parameter name="dateOfBirth" type="date"/>
+        </in-parameters>
+
+
+        <out-parameters>
+            <parameter name="responseMessage"/>
+        </out-parameters>
+
+        <actions>
+            <set field="responseMessage"
+                 value="Person ${firstName} ${lastName} created successfully!"/>
+        </actions>
+
+    </service>
+</services>

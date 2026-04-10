@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-3.xsd"
+        require-authentication="anonymous-all">
+
+        <actions>
+            <entity-find entity-name="automobile.Bike" list="BikeList">
+                <search-form-inputs/>
+            </entity-find>
+        </actions>
+
+        <widgets>
+            <label text="Hey this is the bike section"/>
+            <form-list name="BikeListForm" list="BikeList">
+                <auto-fields-entity entity-name="automobile.Bike" field-type="find-display"/>
+            </form-list>
+        </widgets>
+</screen>

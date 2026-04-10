@@ -1,0 +1,17 @@
+09/04/26
+
+Started learing about groovy as it will be useful for future purpose plus for some change in study.
+Groovy executes in jvm.
+Groovy makes work easy with less boiler plate and friendly syntax.
+It is a full programming language and scripting language.
+It is Dynamically typed. (it also supports static typing) (supports dynamic typing)
+Variable data type are defined in runtime.
+example
+    JAVA - String a = "pratham";
+    Groovy - def b = "kumar"
+less syntax no semicolon required here.
+plus some additional things to make work easy.
+
+
+cloned example component in my local machine to understand the restapi part.
+looked it up in the swaggerUI.

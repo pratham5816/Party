@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
+    <entity entity-name="Bike" package-name="automobile">
+        <field name="id" is-pk="true" type="id"/>
+        <field name="brand" type="text-medium"/>
+        <field name="cylinderEnumId" type="id"/>
+        <field name="dateOfPurchase" type="date"/>
+        <relationship type="one" title="Cylinder" related="moqui.basic.Enumeration">
+            <key-map field-name="cylinderEnumId"/>
+            <entity-condition>
+                <econdition field-name="enumTypeId" value="CylinderType"/>
+            </entity-condition>
+        </relationship>
+    </entity>
+</entities>

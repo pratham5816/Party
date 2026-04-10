@@ -1,0 +1,25 @@
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-3.xsd" require-authentication="anonymous-all">
+
+<!--    <transition name="goPartyList">-->
+<!--        <default-response url="PartyScreen"/>-->
+<!--    </transition>-->
+<!--    -->
+   <widgets>
+       <container>
+       <form-single name="SimpleForm">
+           <field name="name">
+               <default-field title="Enter Name">
+                    <text-line/>
+               </default-field>
+           </field>
+           <field name="submit">
+               <default-field>
+                   <submit/>
+               </default-field>
+           </field>
+       </form-single>
+       </container>
+   </widgets>
+
+</screen>

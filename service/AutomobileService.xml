@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-3.xsd"
+          require-authtication="anonymous-all">
+
+    <service verb="create" noun="Bike" type="entity-auto" allow-remote="true">
+        <in-parameters>
+            <auto-parameters entity-name="automobile.Bike" include="nonpk"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="id"/>
+        </out-parameters>
+    </service>
+
+    <service verb="delete" noun="Bike" type="entity-auto" allow-remote="true">
+        <in-parameters>
+            <parameter name="id" required="true"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="response"/>
+        </out-parameters>
+
+        <actions>
+            <script>ec.logger.warn("Deleting bike with ID: " + id)</script>
+            <entity-auto-delete/>
+            <set field="response" value="Success creating record for bike id = ${id}" />
+        </actions>
+
+        <service verb="update" noun="Bike" type="entity-auto" allow-remote="true">
+            <in-parameters>
+                <parameter name="id" required="true"/>
+                <parameter name=""
+            </in-parameters>
+            <out-parameters>
+            </out-parameters>
+
+            <actions>
+                <entity-auto-update/>
+            </actions>
+
+        </service>
+    </service>
+
+
+</services>
