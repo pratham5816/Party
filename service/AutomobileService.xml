@@ -29,7 +29,9 @@
         <service verb="update" noun="Bike" type="entity-auto" allow-remote="true">
             <in-parameters>
                 <parameter name="id" required="true"/>
-                <parameter name=""
+                <parameter name="brand"/>
+                <parameter name="cylinderEnumId"/>
+                <parameter name="dateOfPurchase"/>
             </in-parameters>
             <out-parameters>
             </out-parameters>

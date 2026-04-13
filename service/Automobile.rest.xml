@@ -6,11 +6,13 @@
         <method type="post">
             <service name="AutomobileService.create#Bike"/>
         </method>
-        <method type="delete">
-            <service name="AutomobileService.delete#Bike"/>
-        </method>
-        <method type="update">
-            <service name="AutomobileService.update#Bike"></service>
-        </method>
+        <resource name="{id}">
+            <method type="delete">
+                <service name="AutomobileService.delete#Bike"/>
+            </method>
+            <method type="put">
+                <service name="AutomobileService.update#Bike"/>
+            </method>
+        </resource>
     </resource>
 </resource>
