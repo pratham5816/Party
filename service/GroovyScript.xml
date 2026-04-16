@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-3.xsd">
+    <service verb="print" noun="AllBikes">
+        <actions>
+            <script>
+                def l = ec.entity.find("automobile.Bike").list()
+
+                l.each { b -> ec.logger.info("Found Bike with ID: ${b.brand}")
+                              ec.logger.info("ID : ${b.id}")    }
+
+            </script>
+        </actions>
+    </service>
+    <service verb="print" noun="RE">
+        <actions>
+            <script>
+                def allbikes = ec.entity.find("automobile.Bike").list()
+
+                allbikes.each {
+                    b -> { 
+                        ec.logger.info("Found RE ----------- ${b.brand}")
+                    }
+                }
+            </script>
+        </actions>
+    </service>
+</services>

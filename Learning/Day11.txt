@@ -1,0 +1,47 @@
+15/04/25
+
+REST APIS - refering from Mantle Universal Service
+
+http://localhost:8080/rest/s1/automobile/bikes
+created logic to list all the bike entity. 
+
+http://localhost:8080/rest/s1/automobile/bikes/{id}
+get record by id.
+
+<id> tag - it makes the url dynamic and the variables can be passed from path url.
+<entity name="Bike" operation="one/create/list/store">
+
+list - performs select * from table;
+create - insert a new record;
+store - update a existing record;
+one - perfroms select * from table where [] = [];
+
+<view-entity> - used for a virtual database view.
+                its kind of a sql join where we are joining tables so that 
+                everytime we don't have to write complex query.
+                - increase performance.
+
+cache=never/true - we can set this while creating entities that if we want to 
+                    cache it in main memory or we want to qeury db everytime.
+                    cache="true" will store all the records in main memory.
+
+<description> tag - Its there for devs for ease of understanding. we can mention 
+                    ex- what a field is about ? 
+                    it will not reflect in database / api
+                    it will be there in codebase / swagger ui .
+
+
+Created a groovy script. wanted to access the list of bikes using excetion context.
+
+Used the moqui ui tools - service to run the service and ec is able to access the db.
+                            Its getting all the records and creating logs of it.
+
+Interesting part - genereted groovy is also visible in service tool.
+
+
+Groovy - Their is no Compile time type checking unlike java.
+        Return statement is optional in groovy. (not in all cases)
+        groovy's == maps to java's .equals() method
+        semicolon is almost optinal (IN MOST OF THE CASES)
+
+Programming Groovy completed till pageNo 60.

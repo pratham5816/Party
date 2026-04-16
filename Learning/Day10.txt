@@ -1,1 +1,4 @@
 13/04/26
+
+mysql
+groovy - The Pragmatic Programmers . Programming Groovy book. 15 pages.

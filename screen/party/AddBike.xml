@@ -5,18 +5,24 @@
 <!--        <transition name="testBikeLogic">-->
             <actions>
                 <script>
-                    ec.logger.info("Running Test Logic")
+                    <!-- ec.logger.info("Running Test Logic")
                     def mybike = ec.entity.find("automobile.Bike").list()
-                    ec.logger.info("data" + mybike)
+                    ec.logger.info("data" + mybike) -->
                 </script>
             </actions>
 <!--        </transition>-->
 <!--    </transitions>-->
+
+    <transition name="addBike"></transition>
     <widgets>
         <label text="hey world"/>
-        <container>
+        <label text="Find Examples" type="h5"/>
+        <container-diaglog id="CreateExampleDialog" button-text="Add Bike">
+            
+        </container-diaglog>
+        <!-- <container>
             <link url="testBikeLogic" text="Click to Run Logic and Print Logs"/>
-        </container>
+        </container> -->
     </widgets>
 
 </screen>

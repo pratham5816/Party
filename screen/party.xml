@@ -8,7 +8,11 @@
     </subscreens>
 
     <widgets>
+        <container-box>
+            <label text="Find Examples" type="h5"/>
+       
         <subscreens-active></subscreens-active>
+         </container-box>
     </widgets>
 
 </screen>

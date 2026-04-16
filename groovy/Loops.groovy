@@ -25,3 +25,10 @@ def map = ["name":"pratham" , "tech":"Moqui"]
 for(i in map){
     println i.value
 }
+
+
+String[] arr = ["hotwax" , "systems" , "indore" , "utah"]
+
+for(s in arr) println s
+
+
