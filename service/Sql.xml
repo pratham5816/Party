@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-3.xsd">
+    <service verb="query" noun="bike">
+        <actions>
+            <script>
+
+            
+                def temp1 = ec.entity.find("automobile.Bike").condition("brand" , "ducati").condition("cylinderEnumId","350cc").one()
+                ec.logger.info("---------------------------Found Bike ${temp1?.brand}-------------------------------------") 
+                
+               
+
+
+                <!-- def temp2 = ec.entity.find("automobile.Bike").useCache(false).selectField("brand").orderBy("brand").list()
+
+                temp2.each{
+                    e -> ec.logger.info("=======================       ${e}   ${e.get('id')}        ====================")
+                } -->
+
+                <!-- def temp3 = ec.entity.find("mantle.party.Party").orderBy("LastUpdatedStamp").list() -->
+
+                <!-- def temp3 = ec.entity.find("mantle.party.Party").orderBy("partyId").limit(10).list() -->
+
+                def temp3 = ec.entity.find("mantle.party.Party").orderBy("-partyId").limit(5).list()
+
+                temp3.each{
+                    e -> ec.logger.info("==========================  ${e.partyId}  ${e.pseudoId} =======================")
+                }
+
+
+            </script>
+        </actions>
+    </service>
+</services>

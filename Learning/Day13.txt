@@ -1,0 +1,14 @@
+17/04/26
+
+Shopify store vs Product store
+What is need of External OMS integration like hotwax when shopify can manage it.
+What is shopify ? what problem it solves ?
+Shopify does order routing ? 
+what is users app in hotwax ? 
+what is need of non-login user accounts in hotwax ? 
+BOPIS - 
+PreOrder - 
+BackOrder -
+Sand Sales - 
+Cycle Count -
+Shopify does order routing ? if yes then how ? 

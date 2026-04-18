@@ -1,0 +1,40 @@
+16/04/26
+
+
+Normalization 
+
+-insert anomalies   occurs when it is not possible to insert data into a 
+                        database because the required fields are missing.
+-update anomalies   occurs when modifying data in database results in errors \
+                        and inconsistency in database
+-delete anomalies   occurs when deleting a record results in unintentional loss of
+                        data.
+
+
+
+features of Normalization
+
+-Removes Data Redundancy 
+-Ensures Data Consistency
+-Standardization
+-Improved Database Design
+-Improves Data Integrity
+
+
+1NF 
+- it does not contain any composite or multivalue attribute
+
+- all values in column are atomic
+- all values in a single column is of single type
+- each record is unique, can be identified by primary key
+- there are no repeating groups or arrays in any row
+
+2NF
+- it is based on fully functional dependency - should meet 1NF form.
+- No partial functional dependency
+- A part of composite pk should not define a not prime attribute (P FD)
+
+
+3NF
+-it should follow 1NF and 2NF
+-No prime attribute should be depend on another not prime attribute

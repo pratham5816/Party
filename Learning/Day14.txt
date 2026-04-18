@@ -1,0 +1,10 @@
+18/04/26
+
+Learn Moqui Session 4 - Logic and Services | Youtube
+
+allow-remote = by default it is false. setting is true will let outer applications or services access to call it.
+
+verb- it can defined by user if service is custom.
+
+
+50 pages completed of The Data Model Resource Book Revised Edition Volume 1

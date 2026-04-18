@@ -45,3 +45,14 @@ Groovy - Their is no Compile time type checking unlike java.
         semicolon is almost optinal (IN MOST OF THE CASES)
 
 Programming Groovy completed till pageNo 60.
+
+
+<container>
+<container-dialog>
+<service-call>
+<transition>
+
+
+[Package] . [File Name] . [Verb][Noun]
+
+

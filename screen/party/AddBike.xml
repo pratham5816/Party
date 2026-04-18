@@ -13,12 +13,15 @@
 <!--        </transition>-->
 <!--    </transitions>-->
 
-    <transition name="addBike"></transition>
+    <transition name="addBike">
+        <service-call name="party.AutomobileService.create"/>
+    </transition>
+    
     <widgets>
         <label text="hey world"/>
         <label text="Find Examples" type="h5"/>
         <container-diaglog id="CreateExampleDialog" button-text="Add Bike">
-            
+
         </container-diaglog>
         <!-- <container>
             <link url="testBikeLogic" text="Click to Run Logic and Print Logs"/>
