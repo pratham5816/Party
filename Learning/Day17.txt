@@ -1,0 +1,20 @@
+22/04/26
+
+Product Entity (how product is associated with diffrent)
+
+- it includes products which are provided by supplier , enterprise , competitors.
+    supplier - the one who manufacture the products
+    enterprise - retailer / company  - who sell the products.
+    product id , description , features and category may be independent of supplier.
+
+Product - may include both tangible goods (physical) and not tangible which are services
+ (it may be any related consulting services , legal services and any other services that provides enterprise / time)
+
+    example-  goods - laptop , shoes , bags , pens |  services - warranty , gift cards , installation service (No inventory) 
+
+
+Product category
+
+
+
+HotWax OMS  - switched to jdk 17 from jdk 21 [update alternatives didnt work out. mannualy added the path in bashrc file using terminal]

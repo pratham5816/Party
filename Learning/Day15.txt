@@ -1,0 +1,83 @@
+20/04/26
+
+The Groovy Programming completed till page no 90.
+The data model book completed till page no 80.
+
+WareHouse FulFillment LifeCycle  (BPL)
+
+    Order Brokering and allocation.
+        Orders are created in oms/shopify/any sales channel/hotwax. status - created
+        Approved orders are automatically pushed into the brokering for fulfillment and routing. (Approved)
+        Inventory for the order is reserved.
+        
+    Sychronization to WMS/ERP
+        A scheduled Job in hotwax generates a feed of orders allocated to warehouse.
+        sync to wms/erp - the data of orders are pushed to wms/erp. In net suite order status are pending fulfillment
+
+    Warehouse operations 
+        prepare shipment - picker will be assgined and it will lead to the picking of order.
+        item fulfillment record is generated.
+        picker will pack and ship it. status will be updated to fulfilled
+        Rejections - orders can be rejected by any reason - natural mishapp / Inventory missmatch / size issue / worn Product / cant find 
+        The rejected order are pushed to rejected queue to get to brokering queue again for fulfillment. (By OMS)
+
+    Shipping and Tracking
+        Order dispatched - WRS/ERP marks order as shipped.
+        Fulfillment sync to hotwax com 
+        status update - reserved to shipped
+        items shipped = hotwax's status to completed
+
+    Final sync to erp/ecom
+
+
+Inventory LifeCycle - (Real Time Inventory Management)
+
+    The Inventory count of a product is regularly updated due to various factors
+        - customer purchase (online / in store / bopis / sandsales)
+        - new inventory     
+        - transtions across systems
+        
+
+    Online ATP - The number of quantity of products which are reserved for online sales
+
+    ATP - Avaiable to Promise - represents the physical inventory of products are deducting the 
+        safety stocks / reversed stocks / threshold - the avaiable stocks for online sales
+
+    Online ATP = QOH - (Excluded Facilities + Safety Stock + Threshold + Orders in Brokering Queue)
+
+    Excluded Facilities - The facilities which are not accepting online orders due to xyz reasons.
+
+    Safety Stock - The perticular quantity of stocks which is reserved for pos sales.
+
+    Threshold - A Limit which is set by whole company or brand to prevent overselling and related issues.
+
+    Orders in Brokering Queue - The number of stocks in BQ are subtracted because they are already promised to customers. hence it comes under sellable inventory.
+
+
+How it Works - The syncing of WMS - POS - ERP  = unified pool of inventory
+    When a product’s QOH and ATP is updated in HotWax Commerce, its Online ATP is 
+    recomputed to ensure sellable inventory for eCommerce is calculated on the latest stock levels.
+    After syncing the hotwax com calculates the inventory
+    
+
+    Inventory Transactions in WMS -
+        ERP systems often serve as the central hub for inventory management 
+        - vendor and new inventory purchase orders 
+        - orders are created in netsuite
+
+    Inventory Receipts in Warehouses -
+        A scheduled job sync and imports the new purchase orders made in ERP and from ERP.
+
+    Inventory Receipts in Stores - 
+        Store faces some challenges while using ERP systems like NetSuite for Inventory Management 
+        as it can be complex for store associates.
+        We have (HOTWAX) - Inventory Receving App - Cycle Count App
+    
+    Purchase Order 
+        Auto increase QOH & ATP: When the inventory physically arrives at the store, 
+        store associates receive items using the Inventory Receiving App.
+        When a product’s QOH and ATP is updated in HotWax Commerce, 
+        its Online ATP is recomputed to ensure sellable inventory for eCommerce is calculated on the latest stock levels.
+
+    Transfer Order 
+        when new transfer orders are created in erp. A scheduled job in hotwax com

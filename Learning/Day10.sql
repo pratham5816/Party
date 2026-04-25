@@ -288,14 +288,22 @@ select customerName from customers order by customerName limit 12,5;
 
 
 
+-------------------------------------------------------------------------------------------
+
+25/04/26
+ show tables like "%party%";
 
 
+select * from user_login where user_login_id="hotwax.user";
 
 
+desc user_login_history;
 
 
+show tables like "%login%";
 
 
+ show tables like "%party%";
 
 
 

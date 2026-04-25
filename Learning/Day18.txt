@@ -1,0 +1,18 @@
+23/04/26
+
+Cycle Count - hotwax 
+
+Cycle Count is a process to maintain the accurate count of inventory in store or facility
+    - reconciling stock levels
+    - Types - hard counts , directed cycle counts
+    BulkUpload - it is a csv based flow for creating multiple cycle counts at once in the cycle count app.
+    directed cycle count - partial count of inventory / perticular set of items are counted.
+    hard count - Total/Full Physical Inventory count of a facility.
+    File status indicators - pending | processed  | canceled | error
+    Assigned - this section allows you to monitor cycle counts that have been assigned to facilities | currently pending
+                To check assigned page we need the access of COMMON_ADMIN
+                search/sort/filter -
+                    status filter - All | Created | In Progress  - easy follow up to the facilities for look-up.
+                Type filter - All types | Hard count | Directed count
+
+

@@ -2,7 +2,7 @@
 <screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-3.xsd"
         require-authentication="anonymous-all">
-    
+<!--     
     <transition name="createParty">
         <actions>
             <service-call name="create#DemoParty" in-map="context"></service-call>
@@ -14,7 +14,7 @@
         <entity-find entity-name="demo.DemoParty"  list="partyList">
             <search-form-inputs/>
         </entity-find>
-    </actions>
+    </actions> -->
 
     <widgets>
 
@@ -22,7 +22,7 @@
 
 <!--        <auto-fields-entity entity-name="moqui.party.Party" field-type="edit"/>-->
 
-        <container-dialog id="CreatePartyDialog" title="Create Party" button-text="Create Party">
+        <!-- <container-dialog id="CreatePartyDialog" title="Create Party" button-text="Create Party">
             <form-single name="CreatePartyForm" transition="createParty">
                 <field name="partyId">
                     <default-field title="Party ID">
@@ -43,11 +43,12 @@
                     </default-field>
                 </field>
             </form-single>
-        </container-dialog>
+        </container-dialog> -->
 
-        <form-list name="ListDemoParty" list="partyList">
+        <!-- <form-list name="ListDemoParty" list="partyList">
             <auto-fields-entity entity-name="demo.DemoParty" field-type="find-display"/>
-        </form-list>
+        </form-list> -->
+        
     </widgets>
 
 </screen>

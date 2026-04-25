@@ -1,0 +1,30 @@
+21/04/26
+
+-Getting blank screens in party component 
+-Tried to fix using git checkout to last commits but it didnt work.
+-Starting from scratch with tutorial component
+
+
+Moqui - wanted to know what type is given to entity field. 
+    INFORMATION_SCHEMA (MYSQL) (data dictionary and system catalog) 
+    -There are read-only tables and not base tables which we can manipulate
+    -got to know about virtual tables which are there in mysql server to maintain database. 
+    -select TABLE_NAME from INFORMATION_SCHEMA.COLUMN where COLUMN_NAME like "%email%"; 
+
+
+
+ORM of moqui - Entity Facade
+
+    XML BASED Definations - instead of annotaions in spring/boot in java. Entity Facade is the interface between Definations and database.
+    It handles all CRUD | REST APIS | Data import / export | JDBC connection access | 
+    IN short - DAO + ORM + Query Executor + Utility Layer 
+
+
+    find vs fastFindOne
+
+        Find - build sql qeury step by step (standard way | flexiable)
+        fastFindOne - faster way to fetch one record. Can use cache memory. more optimized.
+
+
+    
+    field-name: customerId == CUSTOMER_ID (MySQL)    [name convention of orm]

@@ -1,4 +1,4 @@
-assert 1 + 2 == 3
+update-java-alternatives -lSassert 1 + 2 == 3
 
 //assert 1 == 2
 

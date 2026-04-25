@@ -1,0 +1,27 @@
+Detail Party: Contact Entities
+
+        CONTACT_MECH - To connect with party we have contact_mech table
+
+        CONTACT_MECH_TYPE - [Email , Phone , Internet , Web URL]
+
+        CONTACT_MECH_TYPE_PURPOSE -
+
+        CONTACT_MECH_PURPOSE -
+
+        TELECOM_NUMBER -
+
+        POSTAL ADDRESS -
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------
+
+What is External Id ?
+
+External Id is nothing but a unique id fvalid_contact_mech_role rom an external system to identify the entity.
+-An Identifier for other system.
+-Every application has its own internal id - say shopify | instead of replacing it with our system's id we store it as external id.
+
+--------------------------------------------------------------------------------------------------------------

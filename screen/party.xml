@@ -4,15 +4,15 @@
         require-authentication="anonymous-all">
 
 
-    <subscreens default-item="PartyList">
-    </subscreens>
+    <subscreens default-item="PartyScreen"></subscreens>
 
     <widgets>
-        <container-box>
+      <subscreens-active/>
+        <!-- <container-box>
             <label text="Find Examples" type="h5"/>
        
-        <subscreens-active></subscreens-active>
-         </container-box>
+      
+         </container-box> -->
     </widgets>
 
 </screen>

@@ -1,0 +1,65 @@
+24/04/26
+
+SKU - The SKU (stock-keeping unit) is a standard product id that distinctly identities various products.
+UPCA - Universal product code american - mechanism  to indentify product.
+UPCE - Universal product code european
+ISBN - International Standard Book Number
+
+LOT - A lot is simply a number of items which are categorized into a single group. later their inventory can be tracked and maintained.
+
+
+seed data - predefined data inserted into the database automatically when application starts or when migrations runs.
+                avoid manual inserting , environment consistancy , test features quickly.
+
+Initial seed data - It is a subset of seed data that is a must for application requirement for its function. (must-have data)
+
+
+GraphQL - open source query language and server side runtime.
+        - clients only get the required field nothing more.
+
+
+
+----------------------------------------------------------------------------------------------------------
+select COLUMN_TYPE from INFORMATION_SCHEMA.columns
+where table_name = "Product_type" and column_name="product_type_id";
+
+Product Entity -
+   productid,  releaseDate , through date , salsesDiscounationDate , ......
+   enums - ratingTypeEnum = {max rating , min rating , rating override}
+   linked with - PRODUCT_TYPE , PRODUCT_GEO , PRODUCT_CONTENT , PRODUCT_KEYWORD , PRODUCT_REVIEW , PRODUCT_ROLE , VENDOR_PRODUCT
+                    GOOD_IDENTIFICATION
+
+
+                   PRODUCT- MANY TO ONE -PRODUCT_REVIEW
+                            productReviewId , productStoreId , userLoginId , statusId
+
+                            productReviewId enum - pending/deleted/approved
+                   PRODUCT- ONE TO MANY -PRODUCT_TYPE
+                            productTypeId , parentTypeId , isPhysical , isDigital
+
+                            productTypeId enum - Aggregated/Good/Digital_Good/Service/Raw_meterail
+                   PRODUCT- MANY TO ONE -PRODUCT_GEO
+                              productId ,  geoId , description | geo meaing region , country , state , location of product
+                   PRODUCT- MANY TO ONE -PRODUCT_CONTENT
+
+
+                   PRODUCT- MANY TO ONE -PRODUCTMAINT
+
+
+* One thing is very common and used mostly is entity and entity Type.
+
+Party Entity -
+        In our data model everything is defined as Party - it can be any person or organization. GENERIC MODEL
+        can be customer , supplier , employee
+
+        PARTY- ONE TO MANY -PARTY_TYPE
+                PartyTypeId , ParentTypeId , hasTable , description | partyTypeId - [family , team , automated agent , corparation , legal org , perso
+
+        PARTY_TYPE- MANY TO ONE -PartyTypeAttr
+
+        PARTY- MANY TO ONE -PARTY_ROLE
+
+        PARTY- -PERSON
+
+
+
