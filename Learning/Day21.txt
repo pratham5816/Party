@@ -1,0 +1,97 @@
+27/04/26
+
+
+Graph QL - Order Object of shopify having bunch of nested objects 
+            (ex - customer , billing , currency , returnable , 
+            shipping address , mode of sale(pos , online)  , tax )
+
+            everthing related to a purchase by end customer can be posted by this or retrived by this object.
+            Order can have many items in it. 
+        
+
+
+
+WebHooks - Firstly i compared it with kafka as i have basic knowledge of it.
+            - what i understood about WebHooks
+            - Any action of the application can be used to trigger a webhook (for ex - an order placed in shopify , update in status).
+            - We can subscribe to a webhook when an event trigger it will cause the webhook to send any data from one system to another system.
+            - It directly sends a HTTP post call to another system. (here it is different from kafka)
+            - Shopify WebHook- it provides many webhook which can use by graphQl admin api 
+
+
+            - GraphQL Admin API - set of apis in shopify to deal with customers , products , inventory , and all related stuff together.
+                  - To use webhook we need it.
+                  - Shopify uses GraphQL instead of Rest APIs  
+                  - Their are many webhooks which we can subscribe to in shopify. [ex bulk create , update , app uninstalled]
+                  - These hooks can be used for oms and shopify integration
+
+
+
+AWS SQS - Simple Queue Service 
+        - what is does ? It uses a simple FIFO architecture. 
+        - It make sure messages recived in system will be processed correctly.
+        - Simple , Secured , Reliable , Cost-Effective.
+        - Store now and process later is the core problem it solves.
+        - Its standard is JSON Data. but we have string and xml as well.
+
+
+
+
+Shopify Order LifeCycle - 
+      Order Status - 
+      Payment Status -
+      Fulfillment Status -  
+      Return Status - 
+
+
+
+Shopify Data Model -  [GraphQL Schema - shopify exposes the schema in form of objects unlike ] 
+      1. A customer browsers a brand's products on a channel. (pos , shopify , e-com)
+      2. Customer adds item to cart
+      3. Customer initiates checkout.
+      4. The customer pays for the contents in the cart , resulting in an order.
+      5. The brand fulfills the order 
+
+      Objects - 
+            Products - represents individual items available for sale in online store.  [collections , locations]  related objects
+            Collections - organizes products into group for easy browsing / processing  [products]
+            Customer - buyer who creates account and make payments. [orders , gift cards , companies]
+            Companies - Identifies business entities associated with customers for B2B transactions. [customers]
+            Locations - Specifies physical locations where inventory is stored [Products] 
+            Orders - Tracks individual transactions made by customers, including product details and payment information
+                        [Products, Locations, Customers, Markets, Companies, Fulfillment services]
+            Discounts - Defines promotional offers and price reductions applicable to specific products or collections
+            Markets - Represents different geographic or customer segments targeted for selling products
+            Fulfillment orders - Represents tasks needed to prepare and ship parts of an order [Orders]
+            Fulfillment services - Manages third-party logistics and other services for shipping and handling orders [Products]
+            Gift cards - Tracks the issuance and redemption of store credit in the form of gift cards [Customers]
+            Selling plan - Selling plans in Shopify are predefined configurations that allow merchants to offer 
+                              products through various purchase options, such as subscriptions, pre-orders, or installments
+
+
+
+
+      Party Entity [ofbiz] Mapping with Customer Object [shopify]
+
+            super entity Party  - sub entity Person 
+	
+
+Selling plans in Shopify are predefined configurations that allow merchants to offer products through various purchase options, such as subscriptions, pre-orders, or installments
+            Person (ofbiz)  Customer (shopify)
+                  fistName = Customer.first_Name
+                  lastName = Customer.last_Name
+                  not avaiable = Customer.full_Name
+            
+            Postal_Address (ofbiz) Address (array of address | shopify)    
+                        Tables used -> Party - Party_Contact_Mech - Contact_Mech - Postal_Address
+
+                  address1 = address1
+                  address2 = address2
+                  city = city 
+                  customer.zip = Postal_Address.postal_code
+
+                        Table ofbiz - CONTACT_MECH_TYPE_PURPOSE
+
+                  email = contact_mech_purpose[ENUM-email primary] | description = email
+
+

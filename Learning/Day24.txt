@@ -1,0 +1,85 @@
+30/04/26
+
+Apache Shiro
+    - Java based powerfull and east to use framework for security of applications.
+    - It performs authentication , authorization , cryptography  and session management. 
+    - All these things are provided by application security api.
+
+    Core Concept - Subject , Security Manager and Realms
+        
+        Subject - A subject is linked with the current user and associated with human. 
+                can also be mean a demon account , party process or anything similar
+
+                Acquiring the subject of current user gives access to 90% of the things 
+                - login | logout | token | execute auth checks 
+
+        Security Manager - The subject's behind the scenes is Security Manager.
+                            Where as we as a dev will use the subject api more and its implementation is behind the securitymanager 
+                            and its managing all the things.
+                            There is mostly single securitymanager instance per application and its config with application
+                            The default security manager implemntations are POJOs
+                            HashedCredentialsMatcher class
+                        
+        Realms - Its a core component of Shiro and acts as a bridge between shiro and application security-related data
+                    Authorization and Authentication needs the transfer of data between difference shiro and application 
+                    and Realms lands between these two.
+                    It is essentially a security specific DAO (Data Transfer Object). 
+                    It encapsulates connection details for data sources to make data avaiable to shiro as required
+
+
+Moqui Security
+     
+    Authentication - auth starts from userfacade.loginuser() method.
+                    This call shiro's actual securitymanager and its implemented in ExecutionContextFactoryImpl.groovy 
+
+
+    User details (auth details ) are stored in entity name USER_ACCOUNT
+
+    Flow of AUTH Call -  
+
+        UserFacade.java has boolean loginUser (str username , str password) 
+                            |   
+                            |    this call goes to shiro security manager
+                            | 
+        UserFacadeImple.groovy has overridden method loginUser (if login success. new session -> eci.getWebImpl().makeNewSession())
+                            |
+                            |   makeNewSession() request goes to webfacadeimple.groovy 
+                            |   
+        WebFacadeImple.groovy -  It will create a new httpsession and destory the existing session 
+                            |                  
+                            |   request will come back in userfacadeimple then internalLoginUser method will be called
+                            |
+        UserFacadeImple.groovy - It will remove old sessions.
+                            |     It will make a new Subject.
+                            |     It will do the actual login thorugh shiro
+                            |     Auth token and any exception handling and failure to auth
+                            |
+
+                    Return True or False 
+                        True - login success
+                        False - login fail
+    
+    Moqui security config can be overridden by user-facade tag in moquidevconfig.
+        Set Max failures
+        Disable 
+        History Store
+        select encrypt hash type
+
+    
+
+    Authorization -
+          Simple Permissions are their for every user - when he/she can access or hasPermission to.
+
+          A Rest Api call can check and return what a person is authorized to do.
+           It will call ec.user.hasPermission(String userPermissionId) can be UserGroup
+
+
+    Artifact Aware Authorization - 
+          It handles the access of atrifacts - screens , transitions , services and entities
+        
+    Artifact Execution Stack and History
+          Arifact Stack [ArtifactExecutionFacade] stores the execution flow - services called / screen rendered / transitions to screen 
+            -It helps keeping the track of what happend and at the same time history of Artifact
+            -Push , Peek and Pop methods are there.
+    
+    Inheritable authorization

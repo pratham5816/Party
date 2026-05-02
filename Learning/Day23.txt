@@ -1,0 +1,55 @@
+29/04/26
+
+
+graphQL tracing - 
+    REST - SERVICE - GraphQL - Operations 
+
+systemMessageRemoteId - remote system's id of message or object. 
+                        (tracks communication id unlike external id)
+                        ex - webhook triggers message came and its id will stored as systemMessageRemoteId
+
+ShopifyGraphQlRequest - its taking three fields as input - [variables , SystemMessageRemoteId , queryText]
+
+                        queryText - contains ftl file - query what we want from server/request
+                        variables - map of dynamic values passed in graphQL query
+                        systemMessageRemoteId - A configuration key that tells Moqui which Shopify store to call.
+
+                        Response - The response from graphQL api shopify. 
+
+
+Master Data Management - Source of Truth for all data coming from oms , wms , erp , and etc.
+                            It is centralized repository for data storage and management.
+                            Data present is clean and standardized
+
+
+Traced with respect to graphql query OrderUnifiedMegaQuery
+
+    Service      entities[SYSTEM_MESSAGE_REMOTE  , DATA_MANAGER_CONFIG]
+        |
+    ShopifyOrderDetails.xml
+        |
+    ShopifyGraphQLRequest.xml
+        |   
+    SqsOrderImport.xml -Service B - ShopifyOrder - method call (shopifyOrderDetails) - uploades files to MDM.
+        |
+    UtilityServices.xml   - Here the file is stored (upload#File service) in runtime/datmanager and consumed later in moqui for sync
+        |                   syncing in done here
+    ShopifyOrderServices.xml  - syncShopifyOrder service - syncShopifyOrder.groovy
+        |
+    
+
+-----------------------------------------------------------------------
+
+
+To quick search any service in intellij put it in double qoutes "SERVICE_NAME"
+
+-----------------------------------------------------------------------
+
+
+TASK - Time to receive and sell new inventory
+Transfer order [store to store] Time to receive and sell inventory.
+
+Goal - The inventory selling should be asap + The inventory selling should be high 
+       The Transfer order should reach its desired facilty within miminum period of time.
+       Thus , all of this results in more sales of retailer and more profit (not revenue) of retailer.
+       

@@ -25,3 +25,16 @@ External Id is nothing but a unique id fvalid_contact_mech_role rom an external 
 -Every application has its own internal id - say shopify | instead of replacing it with our system's id we store it as external id.
 
 --------------------------------------------------------------------------------------------------------------
+
+Tathya - what types of dashboard we can create for orders and inventory.
+
+orders - order history yearly from all facilities
+        percentage of preorder / postorder / pos / bopis / expidated
+        percentage of rejected / cancelled
+        sort orders facilty wise which recived most orders to least
+        carrier wise allocation of orders - max to least 
+
+inventory - most cycle counts done max to least | Variance Records | -ATP  - possible thing (workers are not serious) 
+          - most atp available at any facility max to least
+          - purchase order from all facilities / transfer order
+          - most brokered outlet 

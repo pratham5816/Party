@@ -1,0 +1,55 @@
+28/04/26
+
+
+
+
+Apache FreeMarker Templates for graphQL -
+    graphQL is written in ftl files.
+
+    it is called via execution context - ec.resource.temple(path , "");
+
+Mantle Shopify Connector -
+    its purpose it to perfrom all rest operations via graphql of shopify.
+    it is a shopify integration part
+
+ Explored rest file and a simple service orderdetails and see where at the end graphQL query is been fired.
+     <script>
+              queryText = ec.resourceFacade.template("dbresource://shopify/template/graphQL/OrderHeaderByIdQuery.ftl", "")
+     </script>
+
+------------------------------------------------------------------------------------
+    Shopify     OFfbiz  
+    phone    =  TELECOM_NUMBER.contact_number
+
+
+
+
+
+Product Entity and Product Object Mapping
+
+    Shopify 
+
+    Id = Product.product_id
+    discription = Product -> ProductContent -> ProductContentType.description
+    price_max = Product_Price -> Product_Price_Type.product_price_type_id   enum[MAXIMUM_PRICE] 
+    price_min = Product_Price -> Product_Price_Type.product_price_type_id   enum[MINIMUM_PRICE] 
+    type = Product -> Product_Type.product_type_id
+    vendor = Product -> Vendor_Product.vendor_Party_Id
+    category = Product_Category -> Product_Category_Type.product_category_type_id. enum[meterail category , industrial category]
+    created_at = Product.created_date
+    featured_image = Product.orignalImageUrl 
+
+
+
+
+Order Object and Order Entity Mapping
+
+    Shopify                ofbiz
+    id = 
+    billing_address =     ORDER_HEADER -> CONTACT_MECH -> POSTAL_ADDRESS
+    email = ORDER_HEADER -> CONTACT_MECH.info_string
+    phone =  ORDER_HEADER -> CONTACT_MECH -> TELECOM_NUMBER.contact_number
+    financial_status = ORDER_HEADER -> ORDER_PAYMENT_PREFERENCE.status_id
+    cancelled = ORDER_HEADER.status_id
+    note = 
+
