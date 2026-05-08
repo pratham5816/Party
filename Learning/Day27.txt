@@ -1,0 +1,35 @@
+05/05/26
+
+Order Processing 
+    Injestion Phase
+
+        Service A - ConsumeSqsOrderMessages : SqsOrderImport.xml
+        this service will poll the orders (remove) from queue (limit 10) and further process it
+        -Extract Order Ids from messages
+        -Now this will call stageShopifyOrder on success delete the sqs message
+
+        Service B - StageShopifyOrder : SqsOrderImport.xml
+        -Input will be having list of orderIds
+        -Iterate through order ids and calling OrderUnifiedMegaQuery 
+        -Get all data json data into single list 
+        -write to a local json file
+        -upload to mdm via upload#DataManagerFile
+
+
+    Processing Phase 
+        
+
+
+
+
+
+
+
+
+
+
+Transfer Order dev oms - florida to brooklyn
+ reviced = VAR_SHIP_RECV NULL 2026-05-05T08:54:14.599000   ||  18:24  order_shipment
+
+
+ table inventory_item_detail - reason_enum_id = VAR_SHIP_RECV (effective date)

@@ -1,0 +1,41 @@
+07/05/26
+
+// Type_scroll_insesitive
+
+
+
+Shopify Bulk Operations -
+    It is a part of shopify admin api
+    It lets us read and write large amount of data asynchronously - much faster (EXPORT AND IMPORT)
+
+Product Master Entity -
+
+    It can be physical or digital.
+    It may have some weight , size , color and brand
+    It may have some volumne
+    It can be virtual product - It may exists only on website - no physical existance - (demo picture of free type)
+
+
+    Product Types - (what are the types of product which can exists in our oms)
+            Aggregated - The product is made up by combing multiple items or products.
+            Digital Gold -
+            Donation -
+            Good -
+            Gift Card -
+            Model -
+            Raw Material -
+            Service -
+            Service Product -
+
+
+    Product Category - (what are the different categories in which we can classifiy the products)
+
+
+
+    Product Category Type -
+                Catalog Category
+                Feature Category - size / color / material
+                HSN Category - used
+                Internal Category - damaged / warehouse / clearance / vip products
+                Quick_Add Category - frequently used products / items
+                Search Category

@@ -35,7 +35,8 @@ Traced with respect to graphql query OrderUnifiedMegaQuery
     UtilityServices.xml   - Here the file is stored (upload#File service) in runtime/datmanager and consumed later in moqui for sync
         |                   syncing in done here
     ShopifyOrderServices.xml  - syncShopifyOrder service - syncShopifyOrder.groovy
-        |
+
+
     
 
 -----------------------------------------------------------------------

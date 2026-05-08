@@ -1,0 +1,49 @@
+04/05/26
+
+
+In how many ways order can come to oms - 
+    POS 
+    E-commerce / websites
+    Backend (oms)
+    BOPIS
+    Market Place (amazon)
+    Customer Support 
+
+
+Job - A job which is internally some bussiness logic or service. a job can be scheduled for a perticular time / timer. We dont run services mannualy
+        systems needs a automated calling to process orders and much more in the oms. say - external integration hits then run this job.
+
+
+shopify order json - 
+	payload 
+OMS Flow - 
+    The flow of how orders coming from shopify gets fulfullied
+    1. Shopify Order Import 
+        orders from shopify are imported into oms in MDM using import job
+        - How is the order data from Shopify stored in different entities? -- order_header , order_item , order_adjustment
+        - How is the order linked to the customer who placed it?  --EntityEnvolved - order_header , order_role , party (This to identify order is linked with which)   
+        - How are products in the order identified, and at what quantity? inside lineitems we have quantity field.
+	- What are the taxes applied to the order? it is mapped to order_adjustment
+	- Where does the order need to be delivered? -- shipment_address field in Json maps with postal_address <-> order_contact_mech <-> order_header
+	- Which facility is responsible for fulfilling the order? -- that is to be done after oms runs brokering after that fulfillment comes to the play
+	
+   2. Viewing the order in OMS - already done
+   3. Order Brokering
+   4. fulfillment
+  
+  
+  Data Model Key Definitions
+  
+  1.Entity - any real world entity - can be person , place , and thing. can be physical or conceptual.
+  2.Attribute - A Character that entity defines. It defines the nature of behevior os entity in more detail.
+  3.Relationship - A logical connections between entities. It defines how entites are associated with each other often include cardinalities.(1 to 1 , * to 1 , 1 to * ,* to *)
+  4.Normalization - Breaking down the larger tables into smaller tables to reduce data redundancy , increase data consistency , and make clear relationships for easy and effcient data       		retrival and db management.
+  5.Abstraction - The process of capturing essential , generalized character of a concept or entity while hiding the specific details.
+  6.Conceptual vs physical vs logical - 
+  	conceptual - high level concepts of design and independent of technology.
+  	logical - detail structures specifying attributes , schema , entity relationship and normalization forms. tech agnostic 
+  	physical - actual physical data stored in tables containing attributes , coloumns , tables and data / indexes.
+  7.Predefined Structure and Patterns
+       A design principle encourging genric patterns , predefined structures applicable across multiple projects , ex - universal data model - applies to any enterprise.
+  8.Core - Entites (party , order_header , shipment ) - high level entites used most commonly. can be customized according to our needs  
+  	
