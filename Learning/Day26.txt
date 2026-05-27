@@ -33,7 +33,7 @@ OMS Flow -
   
   
   Data Model Key Definitions
-  
+  Interns
   1.Entity - any real world entity - can be person , place , and thing. can be physical or conceptual.
   2.Attribute - A Character that entity defines. It defines the nature of behevior os entity in more detail.
   3.Relationship - A logical connections between entities. It defines how entites are associated with each other often include cardinalities.(1 to 1 , * to 1 , 1 to * ,* to *)
@@ -46,4 +46,5 @@ OMS Flow -
   7.Predefined Structure and Patterns
        A design principle encourging genric patterns , predefined structures applicable across multiple projects , ex - universal data model - applies to any enterprise.
   8.Core - Entites (party , order_header , shipment ) - high level entites used most commonly. can be customized according to our needs  
-  	
+  9.Governance - The process of defining rules , responsibilities and 	policies to ensure uniform use , keepup and evolution of data models across organization
+  10.Iterative Refinement - An approach that involves regularly reviewing, testing, and updating a data model as needs change. This ensures models remain relevant and accurate over time.

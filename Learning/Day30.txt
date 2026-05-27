@@ -1,0 +1,35 @@
+11/05/26
+Shopify Order LifeCycle
+
+
+	Order Status -
+		1. Open - created / placed / proccesing / changes can be made state.
+		2. Archived - Automatically or Manually archived.
+		3. Cancelled - Order is Cancelled / refund may be pending hence processing may happen.
+		
+	Payment Status - 
+		1.Pending - COD , Credit card payment , payment later case.
+		2.Authorized - orders are allowed. customer can checkout. mannual payment captured.
+		3.Due - Payment has not been completed and the date has passed. payment overdue case.
+		4.Expired - Payment is not captured before the date was set to get the amount. some credit card payments failed or 
+				time has crossed and payment cant be processed further.
+		5.Paid - Payment captured maunally or automatically.
+		6.Refunded - The refund has been made to the customer against a return case.
+		7.Partially Refunded - Amount returned to the customer was less than the total order amount.
+		8.Partially Paid - You manually Captured the payment order and specified less than order value of payment amount.
+		9.Voided - An unpaid order was manually cancelled.
+		10.UnPaid - Authorized / partially paid / pending / expired	
+		
+	Fulfillment Status - 
+		1.Unfulfilled - When order is placed it is in unfulfilled state. it can be changed to fulfilled manually if required.
+		2.In Progress - This can be used when order is preparing state or in process. can be picking or packing.
+		3.On Hold - Inventory can be reserved but cant be fulfilled at the moment. can be done by retailer.
+		4.Scheduled - Prepaid subscription orders have scheduled status until the fulfillment is reached.
+		5.Partially Fulfilled - when a part of order is fulfilled 
+		6.Fulfilled - when all items of order is fulfilled
+	
+	Return Status -
+		1.Return Requested - A request is raised which can be approve or decline
+		2.Return in progress - The Request Approved we can further process the return order. 
+		3.Returned - The return is completed.
+		4.Inspection Completed- The items in return were inspected. we can refund the amount.

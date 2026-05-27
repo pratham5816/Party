@@ -1,0 +1,159 @@
+14/05/26
+
+Job Scheduling -
+    It is a process of managing and executing the tasks or jobs in a perticular manner or time.
+    Making the right things happen at right time and making the flow efficient.
+
+    Example - In production application - if it crashes
+            we have scheduled jobs which will try to reboot the app if didnt work after 3 times the service inside the job
+            will release the old stable version for the moment and notify all devs about it.
+
+       1.data backup and recovery
+       2.Inventory Update in retail
+       3.Payroll processing
+
+       Types -
+            Event Driven - A user hitting a perticular task and a job is started.
+                            real world - when a user place an order a dedicated job will run and do the things.
+            Time-Based - This is simple time based at some fixed time or intervals jobs are triggered.
+                            real world ex - At midnight 3:00 AM all orders are brokered.
+            Dependency-Based - Many jobs are dependent on each other. say A job has B job within it.
+                            real world ex - After Brokering many things are need to managed - fulfillment , inventory , facility.
+            Manual
+
+            Automatic
+
+
+CRON Expressions -
+
+    A CRON expression is a string with 5 space-separated fields (sometimes 6 or 7 depending on the system) that define a recurring schedule.
+
+    ┌──────── minute (0 - 59)
+    │ ┌────── hour (0 - 23)
+    │ │ ┌──── day of month (1 - 31)
+    │ │ │ ┌── month (1 - 12 or JAN-DEC)
+    │ │ │ │ ┌─ day of week (0 - 6 or SUN-SAT)
+    │ │ │ │ │
+    * * * * *
+
+    0 0 * * *	 Every day at midnight
+    */5 * * * *	 Every 5 minutes
+    0 9 * * 1-5	 9 AM on weekdays
+    30 14 1 * *	 2:30 PM on the 1st of each month
+    @daily	     Shortcut for 0 0 * * *
+
+
+Quartz Scheduler -
+
+        Open Source rich library for job and task scheduling many jobs doest matter any complex or any number.
+        This is made of java based applications. stand-alone applications too.
+
+        unlike cron expression this have 7 fields.
+
+        ┌───────────── second (0 - 59)
+        │ ┌─────────── minute (0 - 59)
+        │ │ ┌───────── hour (0 - 23)
+        │ │ │ ┌─────── day of month (1 - 31)
+        │ │ │ │ ┌───── month (1 - 12 or JAN-DEC)
+        │ │ │ │ │ ┌─── day of week (1 - 7 or SUN-SAT)
+        │ │ │ │ │ │ ┌─ year (optional)
+        │ │ │ │ │ │ │
+        * * * * * * *
+
+
+        why it is better - seconds level precision
+
+
+Semaphores -
+        Semaphores are the synchronization tools used in operating systems to manage and access shared resources
+        in multiprocess or multi-threaded systems. It is a integer variable that controls process executions using
+        atomic operations like wait() and signal().
+        It helps preventing race conditions and ensure proper coordination between processes.
+
+
+        Wait()
+               // takes resource
+               s = s - 1;
+               if s < 0:
+                   wait
+
+        signal()
+               // take resource
+               s = s - 1;
+               if s <- 0;
+                    // wake up process
+
+
+        State 1: Both processes are in their non-critical sections, and S = 1.
+        State 2: P1 enters the critical section. It performs wait(S), so S = 0. P2 continues in the non-critical section.
+        State 3: If P2 now wants to enter, it cannot proceed since S = 0. It must wait until S > 0.
+        State 4: When P1 finishes, it performs signal(S), making S = 1. Now P2 can enter its critical section and again sets S = 0.
+
+
+    Features of Semaphores -
+
+                Mutual Exclusion: Semaphore ensures that only one process accesses a shared resource at a time.
+                Process Synchronization: Semaphore coordinates the execution order of multiple processes.
+                Resource Management: Limits access to a finite set of resources, like printers, devices, etc.
+                Reader-Writer Problem: Allows multiple readers but restricts the writers until no reader is present.
+                Avoiding Deadlocks: Prevents deadlocks by controlling the order of allocation of resources.
+
+    Types of Semaphores -
+                1. Counting Semaphore
+
+                    A counting semaphore can have values ranging from 0 to any positive integer. It is used when multiple
+                    instances of a resource are available and need to be managed.
+
+                2. Binary Semaphore
+
+                    A binary semaphore has only two possible values: 0 and 1. It is mainly used for mutual exclusion, ensuring
+                    that only one process enters the critical section at a time.
+
+
+                Struct Semaphore {
+                    int count;
+                    Queue q;
+                }
+
+
+CallBack Urls -
+        These are the core machanism for implementing asynchronous integration patterns.
+        lightweight publish-subscribe (pub-sub) model.
+        They enable seamless communication between services without requiring the caller to wait.
+        Callback URLs are endpoints specified by a client when making a request to a service.
+        The service, after completing the requested process, sends a notification or data to the provided URL.
+
+        For instance:
+
+            Payment Gateways: Notify the originating system (that initiated the payment request) once the transaction
+            is successfully completed.
+            Bulk SMS Sending: Inform the client about the status of sending SMS messages to a list of recipients.
+            These callbacks or notifications can include details such as delivery statistics and completion reports.
+
+
+
+File Transfer Protocol -
+    It is a application layer protocol for file transfer between client and server using TCP/IP network.
+    It provides standard way to share files across systems.
+
+    supports text , binary , image
+    supports downloading , uploading , and remote file management
+    uses TCP to ensure reliable connection
+
+
+    Types of Connection in FTP
+        1. Control Connection
+
+            This connection is used to exchange commands and responses between the client and server.
+
+        2. Data Connection
+
+            This is used to transfer the actual file content and directory listings.
+
+SSH File Transfer Protocol (SFTP)
+                             SSH Protocol – Secure Remote Login and File Transfer. (ssh client <- -> ssh server)
+
+
+                             Encrypted Data Sharing.
+                             public key and private key concepts.
+                             It provides authentication to username and password.

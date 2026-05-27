@@ -1,0 +1,47 @@
+08/05/26
+
+
+
+DataManagerConfig 
+    What It Controls
+        It defines:
+
+        how data moves
+        from where
+        to where
+        using which process/service
+        SystemMessageRemote 
+
+Ofbiz - 
+    UtilValidate class   .isNotEmpty()
+    Tika class
+
+    ShopifyOrderServices.java 
+        importShopifyOrders()  - taking context map as input and dispatchContext
+            -uploadAndImportFile
+        createOrdersFromShopify()
+
+    DataImportServices.java    
+
+        uploadFileToServer()
+
+-- file upload work done calling shopify api rest used DataManagerConfig 
+            to know which service to call and where to save the file 
+
+
+
+
+
+
+Bundle Product - Combinations of multiple products or items. can be sold independently. have Perticular SKU.
+
+Kit Product = 
+
+Virtual product - The product we see in product description page. The product is virtual has no inventory - non tangable.
+                    then colors and sizes we choose then it turns to be variant product.
+
+Variant product - color size , shade , company.
+
+
+
+ShopifyOrderSyncHistoryServices.xml
